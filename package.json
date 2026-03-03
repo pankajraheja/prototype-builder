@@ -1,0 +1,50 @@
+{
+  "name": "prototype-builder",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "db:generate": "node --env-file=.env node_modules/drizzle-kit/bin.cjs generate",
+    "db:migrate": "node --env-file=.env node_modules/drizzle-kit/bin.cjs migrate",
+    "db:push": "node --env-file=.env node_modules/drizzle-kit/bin.cjs push",
+    "db:studio": "node --env-file=.env node_modules/drizzle-kit/bin.cjs studio",
+    "db:seed": "tsx --env-file=.env scripts/seed.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "setup": "npm install && npm run db:push && npm run db:seed"
+  },
+  "dependencies": {
+    "@azure/identity": "^4.2.0",
+    "@azure/keyvault-secrets": "^4.8.0",
+    "@neondatabase/serverless": "^0.9.0",
+    "date-fns": "^3.6.0",
+    "drizzle-orm": "^0.30.10",
+    "ioredis": "^5.4.1",
+    "lucide-react": "^0.263.1",
+    "nanoid": "^5.0.7",
+    "next": "^14.2.20",
+    "openai": "^4.52.0",
+    "pdf-parse": "^2.4.5",
+    "postgres": "^3.4.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "xlsx": "^0.18.5",
+    "zod": "^3.23.8",
+    "zustand": "^4.5.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/pdf-parse": "^1.1.5",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.19",
+    "drizzle-kit": "^0.21.4",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.4",
+    "tsx": "^4.15.6",
+    "typescript": "^5.4.5",
+    "vitest": "^4.0.18"
+  }
+}
